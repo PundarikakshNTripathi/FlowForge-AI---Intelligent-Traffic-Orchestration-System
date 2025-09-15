@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "npm start",
+    "serve": "serve -s build -l 3000",
+    "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
+    "deploy:vercel": "vercel --prod",
+    "deploy:netlify": "npm run build && netlify deploy --prod --dir=build",
+    "setup": "npm install && npm start",
+    "docker:build": "docker build -t flowforge-ai .",
+    "docker:run": "docker run -p 3000:80 flowforge-ai",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write src/**/*.{ts,tsx,css,md}"
+  }
+}
