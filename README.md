@@ -179,7 +179,16 @@ src/
 
 ## 🚀 Deployment Options
 
-### Vercel (Recommended)
+### Vercel (Recommended - Automatic Deployment)
+
+**Option 1: Direct Git Integration (Simplest)**
+1. Visit [vercel.com](https://vercel.com) and sign in with GitHub
+2. Click "New Project" and import your GitHub repository
+3. Vercel will auto-detect Create React App configuration
+4. Click "Deploy" - automatic HTTPS URL will be generated
+5. Any future commits to main branch will auto-deploy
+
+**Option 2: Manual Deployment**
 ```bash
 # Install Vercel CLI
 npm install -g vercel
@@ -207,6 +216,15 @@ npm run build
 # Upload 'build' folder to any static hosting service
 # (AWS S3, Azure Static Web Apps, GitHub Pages)
 ```
+
+### CI/CD Note
+This project uses **Vercel's native Git integration** for deployment instead of GitHub Actions. This approach is:
+- ✅ **Simpler**: No secrets configuration required
+- ✅ **More reliable**: Direct integration with Vercel's platform
+- ✅ **Automatic**: Deploys on every commit to main branch
+- ✅ **Zero-config**: Works out of the box with Create React App
+
+Previous GitHub Actions workflows have been removed to eliminate CI/CD pipeline conflicts.
 
 ## 🎯 Smart India Hackathon Demo Guide
 
