@@ -1,0 +1,19 @@
+import React, { createContext, useContext } from 'react';
+
+interface ThemeContextProps {
+  darkMode: boolean;
+  toggleTheme: () => void;
+}
+
+export const ThemeContext = createContext<ThemeContextProps>({
+  darkMode: true,
+  toggleTheme: () => {},
+});
+
+export const useThemeContext = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useThemeContext must be used within a ThemeProvider');
+  }
+  return context;
+};
